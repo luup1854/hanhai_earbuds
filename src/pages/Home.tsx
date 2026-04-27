@@ -1,4 +1,25 @@
-import { ArrowRight, BarChart3, Headphones, Star, TrendingUp } from 'lucide-react'
+import {
+  ArrowRight,
+  BarChart3,
+  BatteryCharging,
+  Clock3,
+  Headphones,
+  Mail,
+  MessageCircle,
+  Mic2,
+  MapPin,
+  PlaySquare,
+  Phone,
+  Radio,
+  ShoppingBag,
+  ShoppingCart,
+  Star,
+  Store,
+  TrendingUp,
+  Video,
+  Wifi,
+} from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteData } from '../data/siteData'
 
@@ -15,8 +36,26 @@ function HeroTitle({ title }: { title: string }) {
   )
 }
 
+const platformIcons: Record<string, LucideIcon> = {
+  抖音: PlaySquare,
+  淘宝: ShoppingBag,
+  天猫: Store,
+  京东: ShoppingCart,
+  拼多多: ShoppingBag,
+  小红书: MessageCircle,
+  快手: Video,
+  视频号: Radio,
+}
+
+const productPointIcons: Record<string, LucideIcon> = {
+  低延迟: Clock3,
+  清晰通话: Mic2,
+  舒适佩戴: Headphones,
+  稳定连接: Wifi,
+}
+
 export function Home() {
-  const { hero, about, business } = siteData.home
+  const { hero, about, business, platforms, advantages, earbudsEntry } = siteData.home
   const businessNote = business.find((item) => item.note)?.note
 
   return (
@@ -206,8 +245,180 @@ export function Home() {
           ) : null}
         </div>
       </section>
-      <section id="platform" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="平台矩阵占位" />
-      <section id="contact" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="联系我们占位" />
+      <section id="platform" className="scroll-mt-24 bg-white py-14 text-neutral-950 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+              PLATFORM MATRIX
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">平台矩阵</h2>
+            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
+          </div>
+
+          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+            {platforms.map((platform) => {
+              const Icon = platformIcons[platform.name] ?? Store
+
+              return (
+                <div
+                  key={platform.name}
+                  className="group flex h-16 items-center justify-center gap-2 rounded-lg border border-neutral-100 bg-white px-4 text-base font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-600 hover:shadow-[0_18px_44px_rgba(249,115,22,0.14)]"
+                >
+                  <Icon className="h-5 w-5 text-orange-500 transition duration-300 group-hover:scale-110" />
+                  {platform.name}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+              OUR ADVANTAGES
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">我们的优势</h2>
+            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
+          </div>
+
+          <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {advantages.map((item) => {
+              const Icon = item.icon
+
+              return (
+                <article
+                  key={item.title}
+                  className="group rounded-lg border border-neutral-100 bg-white p-6 shadow-[0_14px_42px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_20px_54px_rgba(249,115,22,0.12)]"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-orange-50 text-orange-600 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                    <Icon className="h-7 w-7" strokeWidth={1.8} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">{item.description}</p>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-10 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative isolate overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(110deg,#050505_0%,#151515_48%,#050505_100%)] px-6 py-8 shadow-[0_24px_70px_rgba(15,23,42,0.18)] sm:px-10 lg:px-12">
+            <img
+              src={earbudsEntry.image.src}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-75"
+            />
+            <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.74)_38%,rgba(0,0,0,0.18)_72%,rgba(0,0,0,0.35)_100%)]" />
+            <div className="absolute inset-y-0 left-0 -z-10 w-2/3 bg-[radial-gradient(circle_at_18%_50%,rgba(249,115,22,0.24),transparent_36%)]" />
+
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-400">
+                Product Entry
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                {earbudsEntry.name}
+              </h2>
+              <p className="mt-3 text-lg font-medium text-neutral-200">{earbudsEntry.description}</p>
+
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {earbudsEntry.sellingPoints.map((point) => {
+                  const Icon = productPointIcons[point] ?? BatteryCharging
+                  const label = point === '清晰通话' ? '高清音质' : point
+
+                  return (
+                    <div key={point} className="flex items-center gap-2 text-sm text-neutral-200">
+                      <Icon className="h-5 w-5 text-orange-400" strokeWidth={1.8} />
+                      {label}
+                    </div>
+                  )
+                })}
+              </div>
+
+              <Link
+                to={earbudsEntry.action.href}
+                className="group mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-orange-500"
+              >
+                {earbudsEntry.action.label}
+                <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="scroll-mt-24 bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+              CONTACT US
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">联系我们</h2>
+            <div className="mt-4 h-1 w-10 rounded-full bg-orange-500" />
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
+            <div className="grid gap-4 rounded-xl border border-neutral-100 bg-white p-6 shadow-[0_18px_54px_rgba(15,23,42,0.08)] md:grid-cols-3">
+              {[
+                { label: '电话', value: siteData.company.phone, icon: Phone },
+                { label: '公司邮箱', value: siteData.company.email, icon: Mail },
+                { label: '地址（中国）', value: `中国 ${siteData.company.addressCn}`, icon: MapPin },
+              ].map((item) => {
+                const Icon = item.icon
+
+                return (
+                  <div key={item.label} className="flex gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
+                      <Icon className="h-5 w-5" strokeWidth={1.8} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-neutral-950">{item.label}</p>
+                      <p className="mt-2 text-sm leading-7 text-neutral-600">{item.value}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="flex flex-col justify-between gap-6 rounded-xl border border-neutral-100 bg-white p-6 shadow-[0_18px_54px_rgba(15,23,42,0.08)]">
+              <div className="space-y-5">
+                <div className="flex gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
+                    <Store className="h-5 w-5" strokeWidth={1.8} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-neutral-950">公司英文名</p>
+                    <p className="mt-2 text-sm leading-7 text-neutral-600">{siteData.company.nameEn}</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
+                    <MapPin className="h-5 w-5" strokeWidth={1.8} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-neutral-950">英文地址</p>
+                    <p className="mt-2 text-sm leading-7 text-neutral-600">
+                      {siteData.company.addressEn}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={`tel:${siteData.company.phone}`}
+                className="group inline-flex items-center justify-center gap-3 self-start rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/20 transition duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-orange-500"
+              >
+                立即联系
+                <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

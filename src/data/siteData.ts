@@ -80,6 +80,10 @@ export type AdvantageItem = {
 export type EarbudsEntry = {
   name: string;
   description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   sellingPoints: string[];
   action: {
     label: string;
@@ -241,6 +245,10 @@ export const siteData: SiteData = {
     earbudsEntry: {
       name: "宾利伯爵耳机",
       description: "低延迟 · 清晰通话 · 舒适佩戴 · 稳定连接",
+      image: {
+        src: "/images/product-banner.jpg",
+        alt: "宾利伯爵耳机产品横幅",
+      },
       sellingPoints: ["低延迟", "清晰通话", "舒适佩戴", "稳定连接"],
       action: {
         label: "查看产品详情",
