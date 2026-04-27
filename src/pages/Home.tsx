@@ -16,7 +16,7 @@ function HeroTitle({ title }: { title: string }) {
 }
 
 export function Home() {
-  const { hero, about } = siteData.home
+  const { hero, about, business } = siteData.home
 
   return (
     <>
@@ -110,7 +110,54 @@ export function Home() {
         </div>
       </section>
 
-      <section id="business" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="核心业务占位" />
+      <section
+        id="business"
+        className="relative isolate scroll-mt-24 overflow-hidden bg-neutral-950 py-16 text-white sm:py-20 lg:py-24"
+      >
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.18),transparent_28%),linear-gradient(180deg,#0a0a0a_0%,#111_48%,#050505_100%)]" />
+        <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:44px_44px]" />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-400">
+              CORE BUSINESS
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">核心业务</h2>
+            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {business.map((item) => {
+              const Icon = item.icon
+
+              return (
+                <article
+                  key={item.title}
+                  className="group relative flex min-h-[330px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(145deg,rgba(39,39,42,0.98),rgba(10,10,10,0.98))] p-7 text-center shadow-2xl shadow-black/30 transition duration-300 hover:-translate-y-2 hover:border-orange-500/70 hover:shadow-[0_24px_80px_rgba(249,115,22,0.18)]"
+                >
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-orange-500/10 blur-3xl transition duration-300 group-hover:bg-orange-500/20" />
+
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center text-orange-500 transition duration-300 group-hover:scale-110 group-hover:text-orange-400">
+                    <Icon className="h-12 w-12" strokeWidth={1.7} />
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-neutral-300">{item.description}</p>
+
+                  {item.note ? (
+                    <div className="mt-auto pt-6">
+                      <p className="rounded-md bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-3 text-sm font-semibold leading-6 text-white shadow-lg shadow-orange-600/20">
+                        {item.note}
+                      </p>
+                    </div>
+                  ) : null}
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
       <section id="platform" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="平台矩阵占位" />
       <section id="contact" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="联系我们占位" />
     </>

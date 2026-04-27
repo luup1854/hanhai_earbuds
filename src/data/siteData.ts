@@ -182,23 +182,27 @@ export const siteData: SiteData = {
     business: [
       {
         title: "3C 品牌代理",
-        description: "与全球 3C 数码品牌深度合作，提供品牌与区域代理服务。",
+        description:
+          "与多家 3C 数码及音频品牌深度合作，提供品牌代理、渠道拓展与市场增长服务。",
         icon: Tag,
         note: "以宾利伯爵耳机、魔声耳机为核心产品，耳机月销量稳定在 5 万台以上。",
       },
       {
         title: "直播电商运营",
-        description: "专业直播间策划与流量执行，打通高效转化的直播闭环。",
+        description:
+          "提供直播间策划、脚本设计、主播排班、场控执行、数据复盘等运营服务，打造高效转化的直播场景。",
         icon: Video,
       },
       {
         title: "主播孵化陪跑",
-        description: "从选拔、培训到实战陪跑，助力打造优质主播与达人。",
+        description:
+          "从选拔、培训到实战陪跑，帮助主播提升表达能力、产品理解力与直播转化能力。",
         icon: UsersRound,
       },
       {
         title: "多平台渠道运营",
-        description: "在多平台布局与运营分发，整合平台资源与运营资源。",
+        description:
+          "覆盖抖音、淘宝、天猫、京东、拼多多、小红书、快手、视频号等平台，构建多平台协同增长体系。",
         icon: Grid2X2,
       },
     ],
