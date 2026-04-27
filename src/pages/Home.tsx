@@ -355,68 +355,71 @@ export function Home() {
 
       <section id="contact" className="scroll-mt-24 bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
               CONTACT US
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">联系我们</h2>
-            <div className="mt-4 h-1 w-10 rounded-full bg-orange-500" />
+            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
-            <div className="grid gap-4 rounded-xl border border-neutral-100 bg-white p-6 shadow-[0_18px_54px_rgba(15,23,42,0.08)] md:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+            <div className="grid gap-4 sm:grid-cols-2">
               {[
                 { label: '电话', value: siteData.company.phone, icon: Phone },
                 { label: '公司邮箱', value: siteData.company.email, icon: Mail },
-                { label: '地址（中国）', value: `中国 ${siteData.company.addressCn}`, icon: MapPin },
+                { label: '地址（中国）', value: `中国 ${siteData.company.addressCn}`, icon: MapPin, wide: true },
               ].map((item) => {
                 const Icon = item.icon
 
                 return (
-                  <div key={item.label} className="flex gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
-                      <Icon className="h-5 w-5" strokeWidth={1.8} />
+                  <div
+                    key={item.label}
+                    className={`group rounded-xl border border-neutral-100 bg-white p-5 shadow-[0_14px_42px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_20px_54px_rgba(249,115,22,0.12)] ${
+                      item.wide ? 'sm:col-span-2' : ''
+                    }`}
+                  >
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-orange-50 text-orange-600 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                      <Icon className="h-5 w-5" strokeWidth={1.9} />
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-neutral-950">{item.label}</p>
-                      <p className="mt-2 text-sm leading-7 text-neutral-600">{item.value}</p>
-                    </div>
+                    <p className="text-sm font-semibold text-neutral-950">{item.label}</p>
+                    <p className="mt-2 break-words text-sm leading-7 text-neutral-600">{item.value}</p>
                   </div>
                 )
               })}
             </div>
 
-            <div className="flex flex-col justify-between gap-6 rounded-xl border border-neutral-100 bg-white p-6 shadow-[0_18px_54px_rgba(15,23,42,0.08)]">
-              <div className="space-y-5">
-                <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
-                    <Store className="h-5 w-5" strokeWidth={1.8} />
-                  </div>
+            <div className="relative isolate overflow-hidden rounded-xl border border-neutral-900 bg-neutral-950 p-6 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,rgba(249,115,22,0.24),transparent_34%),linear-gradient(145deg,#171717,#050505)]" />
+              <div className="flex h-full flex-col justify-between gap-8">
+                <div className="space-y-6">
                   <div>
-                    <p className="text-sm font-semibold text-neutral-950">公司英文名</p>
-                    <p className="mt-2 text-sm leading-7 text-neutral-600">{siteData.company.nameEn}</p>
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-orange-500/35 bg-orange-500/10 text-orange-400">
+                      <Store className="h-5 w-5" strokeWidth={1.8} />
+                    </div>
+                    <p className="text-sm font-semibold text-orange-300">公司英文名</p>
+                    <p className="mt-2 text-base leading-8 text-neutral-200">{siteData.company.nameEn}</p>
                   </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600">
-                    <MapPin className="h-5 w-5" strokeWidth={1.8} />
-                  </div>
+
                   <div>
-                    <p className="text-sm font-semibold text-neutral-950">英文地址</p>
-                    <p className="mt-2 text-sm leading-7 text-neutral-600">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-orange-500/35 bg-orange-500/10 text-orange-400">
+                      <MapPin className="h-5 w-5" strokeWidth={1.8} />
+                    </div>
+                    <p className="text-sm font-semibold text-orange-300">英文地址</p>
+                    <p className="mt-2 text-sm leading-7 text-neutral-300">
                       {siteData.company.addressEn}
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <a
-                href={`tel:${siteData.company.phone}`}
-                className="group inline-flex items-center justify-center gap-3 self-start rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/20 transition duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-orange-500"
-              >
-                立即联系
-                <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
-              </a>
+                <a
+                  href={`tel:${siteData.company.phone}`}
+                  className="group inline-flex items-center justify-center gap-3 self-start rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/20 transition duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-orange-500"
+                >
+                  立即联系
+                  <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
