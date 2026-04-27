@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, BarChart3, Headphones, Star, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteData } from '../data/siteData'
 
@@ -17,6 +17,7 @@ function HeroTitle({ title }: { title: string }) {
 
 export function Home() {
   const { hero, about, business } = siteData.home
+  const businessNote = business.find((item) => item.note)?.note
 
   return (
     <>
@@ -126,36 +127,83 @@ export function Home() {
             <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {business.map((item) => {
               const Icon = item.icon
 
               return (
-                <article
-                  key={item.title}
-                  className="group relative flex min-h-[330px] flex-col overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(145deg,rgba(39,39,42,0.98),rgba(10,10,10,0.98))] p-7 text-center shadow-2xl shadow-black/30 transition duration-300 hover:-translate-y-2 hover:border-orange-500/70 hover:shadow-[0_24px_80px_rgba(249,115,22,0.18)]"
-                >
-                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                  <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-orange-500/10 blur-3xl transition duration-300 group-hover:bg-orange-500/20" />
+                <div key={item.title} className="relative">
+                  <article className="group relative min-h-[330px] overflow-hidden rounded-lg border border-orange-500/45 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.16),transparent_42%),linear-gradient(145deg,rgba(38,38,41,0.96),rgba(8,8,8,0.98))] px-7 py-9 shadow-2xl shadow-black/30 transition duration-300 hover:-translate-y-2 hover:border-orange-400 hover:shadow-[0_24px_80px_rgba(249,115,22,0.2)]">
+                    <div className="absolute inset-x-8 bottom-0 h-24 opacity-25 [background-image:repeating-radial-gradient(ellipse_at_center,rgba(249,115,22,0.45)_0_1px,transparent_1px_6px)] [mask-image:linear-gradient(180deg,transparent,black)]" />
+                    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-300/50 to-transparent" />
 
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center text-orange-500 transition duration-300 group-hover:scale-110 group-hover:text-orange-400">
-                    <Icon className="h-12 w-12" strokeWidth={1.7} />
-                  </div>
-
-                  <h3 className="mt-6 text-xl font-semibold text-white">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-neutral-300">{item.description}</p>
-
-                  {item.note ? (
-                    <div className="mt-auto pt-6">
-                      <p className="rounded-md bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-3 text-sm font-semibold leading-6 text-white shadow-lg shadow-orange-600/20">
-                        {item.note}
-                      </p>
+                    <div className="relative mx-auto flex h-28 w-28 items-center justify-center text-orange-500 transition duration-300 group-hover:scale-105 group-hover:text-orange-400">
+                      <div className="absolute inset-0 rounded-full border border-orange-500/25" />
+                      <div className="absolute inset-4 rounded-full border border-orange-500/20" />
+                      <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-orange-500/35 to-transparent" />
+                      <div className="absolute bottom-0 top-0 left-1/2 w-px bg-gradient-to-b from-transparent via-orange-500/20 to-transparent" />
+                      <Icon className="relative h-14 w-14" strokeWidth={1.8} />
                     </div>
-                  ) : null}
-                </article>
+
+                    <h3 className="mt-7 text-center text-2xl font-semibold text-white">{item.title}</h3>
+                    <div className="mx-auto mt-4 h-1 w-8 rounded-full bg-orange-500" />
+                    <p className="mt-5 text-left text-base leading-8 text-neutral-300">{item.description}</p>
+                  </article>
+
+                  <div className="absolute -bottom-12 left-1/2 hidden h-12 w-px bg-orange-500/60 xl:block">
+                    <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_18px_rgba(249,115,22,0.8)]" />
+                    <span className="absolute bottom-0 left-0 h-px w-28 bg-orange-500/35 odd:hidden" />
+                  </div>
+                </div>
               )
             })}
           </div>
+
+          {businessNote ? (
+            <div className="relative mx-auto mt-16 max-w-6xl rounded-xl border border-orange-500/55 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.18),transparent_55%),linear-gradient(135deg,rgba(49,28,16,0.96),rgba(8,8,8,0.98))] p-5 shadow-[0_28px_90px_rgba(249,115,22,0.18)]">
+              <div className="absolute inset-2 rounded-lg border border-orange-500/20" />
+              <div className="relative grid gap-6 lg:grid-cols-[1.25fr_0.75fr_1.5fr] lg:items-center">
+                <div className="flex items-center gap-5">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-orange-500/45 text-orange-500">
+                    <Star className="h-9 w-9" strokeWidth={1.8} />
+                  </div>
+                  <div>
+                    <p className="text-xl font-semibold text-white">核心产品表现</p>
+                    <p className="mt-2 max-w-sm text-base leading-8 text-neutral-200">
+                      以宾利伯爵耳机、魔声耳机为核心产品
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-y border-orange-500/25 py-5 text-center lg:border-x lg:border-y-0 lg:py-0">
+                  <p className="text-6xl font-semibold leading-none text-orange-500 drop-shadow-[0_0_22px_rgba(249,115,22,0.45)]">
+                    5 万+
+                  </p>
+                  <p className="mt-2 text-lg text-neutral-200">台 / 月稳定销量</p>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {[
+                    { label: '音频品类核心产品', icon: Headphones },
+                    { label: '多平台渠道运营', icon: BarChart3 },
+                    { label: '直播增长服务', icon: TrendingUp },
+                  ].map((tag) => {
+                    const TagIcon = tag.icon
+
+                    return (
+                      <div
+                        key={tag.label}
+                        className="flex items-center justify-center gap-2 rounded-md border border-orange-500/35 bg-black/20 px-4 py-3 text-sm font-medium text-neutral-200"
+                      >
+                        <TagIcon className="h-5 w-5 text-orange-500" strokeWidth={1.8} />
+                        {tag.label}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
       <section id="platform" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="平台矩阵占位" />
