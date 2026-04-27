@@ -246,7 +246,7 @@ export const siteData: SiteData = {
       name: "宾利伯爵耳机",
       description: "低延迟 · 清晰通话 · 舒适佩戴 · 稳定连接",
       image: {
-        src: "/images/product-banner.png",
+        src: "/images/product-banner2.png",
         alt: "宾利伯爵耳机产品横幅",
       },
       sellingPoints: ["低延迟", "清晰通话", "舒适佩戴", "稳定连接"],
