@@ -36,6 +36,10 @@ export type HeroContent = {
   title: string
   subtitle: string
   description: string
+  image: {
+    src: string
+    alt: string
+  }
   primaryAction: {
     label: string
     href: string
@@ -131,6 +135,10 @@ export const siteData: SiteData = {
       subtitle: '品牌代理 × 直播电商运营 × 主播孵化 × 多平台渠道运营',
       description:
         '我们整合优质品牌、内容创作与多平台流量资源，以专业的电商运营能力与精细化执行，助力品牌实现内容营销与电商销售的高效增长。',
+      image: {
+        src: '/images/hero-earbuds.jpg',
+        alt: '宾利伯爵耳机首屏视觉图',
+      },
       primaryAction: {
         label: '了解业务',
         href: '#business',
