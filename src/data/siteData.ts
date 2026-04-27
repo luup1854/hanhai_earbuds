@@ -17,6 +17,7 @@ import type { LucideIcon } from 'lucide-react'
 export type CompanyInfo = {
   nameCn: string
   nameEn: string
+  logo: string
   taxId: string
   phone: string
   email: string
@@ -107,6 +108,7 @@ export const siteData: SiteData = {
   company: {
     nameCn: '深圳市皓承智能设备有限公司',
     nameEn: 'Shenzhen Haocheng Intelligent Equipment Company Limited',
+    logo: '/images/logo.png',
     taxId: '91440300MA5HH9834X',
     phone: '13534052763',
     email: 'info@haochengholdings.com',
