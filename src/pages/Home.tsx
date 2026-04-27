@@ -16,7 +16,7 @@ function HeroTitle({ title }: { title: string }) {
 }
 
 export function Home() {
-  const { hero } = siteData.home
+  const { hero, about } = siteData.home
 
   return (
     <>
@@ -71,8 +71,46 @@ export function Home() {
         </div>
       </section>
 
+      <section id="about" className="scroll-mt-24 bg-white py-16 text-neutral-950 sm:py-20 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-600">
+              About Haocheng
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold leading-tight text-neutral-950 sm:text-4xl">
+              {about.title}
+            </h2>
+            <div className="mt-4 h-1 w-10 rounded-full bg-orange-500" />
+
+            <div className="mt-8 space-y-5 text-base leading-8 text-neutral-700">
+              {about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {about.highlights.map((item) => {
+              const Icon = item.icon
+
+              return (
+                <article
+                  key={item.title}
+                  className="group rounded-lg border border-neutral-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_24px_70px_rgba(249,115,22,0.14)]"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md border border-orange-100 bg-orange-50 text-orange-600 transition duration-300 group-hover:border-orange-200 group-hover:bg-orange-500 group-hover:text-white">
+                    <Icon className="h-7 w-7" strokeWidth={1.8} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">{item.description}</p>
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       <section id="business" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="核心业务占位" />
-      <section id="about" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="关于我们占位" />
       <section id="platform" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="平台矩阵占位" />
       <section id="contact" className="h-1 scroll-mt-24 bg-neutral-950" aria-label="联系我们占位" />
     </>
