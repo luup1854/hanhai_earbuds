@@ -320,10 +320,12 @@ export function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-400">
                 Product Entry
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+              <h2 className="mt-3 bg-gradient-to-r from-[#fff5d8] via-[#d8b56f] to-[#fff8df] bg-clip-text text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(216,181,111,0.24)] sm:text-4xl">
                 {earbudsEntry.name}
               </h2>
-              <p className="mt-3 text-lg font-medium text-neutral-200">{earbudsEntry.description}</p>
+              <p className="mt-3 bg-gradient-to-r from-[#fff1cf] via-[#c9a35d] to-[#f6dfad] bg-clip-text text-lg font-medium text-transparent">
+                {earbudsEntry.description}
+              </p>
 
               <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {earbudsEntry.sellingPoints.map((point) => {
