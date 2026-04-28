@@ -1,11 +1,20 @@
-import { ArrowRight, BatteryCharging, Clock3, Headphones, Mic2, MapPin, Phone, Wifi } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { siteData } from '../data/siteData'
+import {
+  ArrowRight,
+  BatteryCharging,
+  Clock3,
+  Headphones,
+  Mic2,
+  MapPin,
+  Phone,
+  Wifi,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { siteData } from "../data/siteData";
 
 function HeroTitle({ title }: { title: string }) {
-  const emphasis = '3C 数码'
-  const [before, after] = title.split(emphasis)
+  const emphasis = "3C 数码";
+  const [before, after] = title.split(emphasis);
 
   return (
     <>
@@ -13,7 +22,7 @@ function HeroTitle({ title }: { title: string }) {
       <span className="text-orange-500">{emphasis}</span>
       {after}
     </>
-  )
+  );
 }
 
 const productPointIcons: Record<string, LucideIcon> = {
@@ -21,10 +30,10 @@ const productPointIcons: Record<string, LucideIcon> = {
   清晰通话: Mic2,
   舒适佩戴: Headphones,
   稳定连接: Wifi,
-}
+};
 
 export function Home() {
-  const { hero, about, business, advantages, earbudsEntry } = siteData.home
+  const { hero, about, business, advantages, earbudsEntry } = siteData.home;
 
   return (
     <>
@@ -54,7 +63,9 @@ export function Home() {
               <HeroTitle title={hero.title} />
             </h1>
 
-            <p className="mt-5 text-base font-medium text-neutral-100 sm:text-xl">{hero.subtitle}</p>
+            <p className="mt-5 text-base font-medium text-neutral-100 sm:text-xl">
+              {hero.subtitle}
+            </p>
             <p className="mt-7 max-w-2xl text-base leading-8 text-neutral-300 sm:text-lg">
               {hero.description}
             </p>
@@ -79,7 +90,10 @@ export function Home() {
         </div>
       </section>
 
-      <section id="about" className="scroll-mt-24 bg-white py-16 text-neutral-950 sm:py-20 lg:py-24">
+      <section
+        id="about"
+        className="scroll-mt-24 bg-white py-16 text-neutral-950 sm:py-20 lg:py-24"
+      >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-600">
@@ -99,7 +113,7 @@ export function Home() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {about.highlights.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon;
 
               return (
                 <article
@@ -109,10 +123,14 @@ export function Home() {
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md border border-orange-100 bg-orange-50 text-orange-600 transition duration-300 group-hover:border-orange-200 group-hover:bg-orange-500 group-hover:text-white">
                     <Icon className="h-7 w-7" strokeWidth={1.8} />
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-neutral-600">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-neutral-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">
+                    {item.description}
+                  </p>
                 </article>
-              )
+              );
             })}
           </div>
         </div>
@@ -130,13 +148,15 @@ export function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-400">
               CORE BUSINESS
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">核心业务</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+              核心业务
+            </h2>
             <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {business.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon;
 
               return (
                 <div key={item.title} className="relative">
@@ -152,9 +172,13 @@ export function Home() {
                       <Icon className="relative h-14 w-14" strokeWidth={1.8} />
                     </div>
 
-                    <h3 className="mt-7 text-center text-2xl font-semibold text-white">{item.title}</h3>
+                    <h3 className="mt-7 text-center text-2xl font-semibold text-white">
+                      {item.title}
+                    </h3>
                     <div className="mx-auto mt-4 h-1 w-8 rounded-full bg-orange-500" />
-                    <p className="mt-5 text-left text-base leading-8 text-neutral-300">{item.description}</p>
+                    <p className="mt-5 text-left text-base leading-8 text-neutral-300">
+                      {item.description}
+                    </p>
                     {item.note ? (
                       <p className="mt-4 text-left text-base leading-8 text-neutral-300">
                         {item.note}
@@ -162,27 +186,29 @@ export function Home() {
                     ) : null}
                   </article>
                 </div>
-              )
+              );
             })}
           </div>
-
         </div>
       </section>
-      
 
       <section className="bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center pt-12">
+            {" "}
+            {/* 添加 pt-12 */}
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
               OUR ADVANTAGES
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">我们的优势</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">
+              我们的优势
+            </h2>
             <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
           </div>
 
           <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {advantages.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon;
 
               return (
                 <article
@@ -192,10 +218,14 @@ export function Home() {
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-orange-50 text-orange-600 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
                     <Icon className="h-7 w-7" strokeWidth={1.8} />
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-neutral-600">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-neutral-950">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">
+                    {item.description}
+                  </p>
                 </article>
-              )
+              );
             })}
           </div>
         </div>
@@ -226,15 +256,21 @@ export function Home() {
 
               <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {earbudsEntry.sellingPoints.map((point) => {
-                  const Icon = productPointIcons[point] ?? BatteryCharging
-                  const label = point === '清晰通话' ? '高清音质' : point
+                  const Icon = productPointIcons[point] ?? BatteryCharging;
+                  const label = point === "清晰通话" ? "高清音质" : point;
 
                   return (
-                    <div key={point} className="flex items-center gap-2 text-sm text-neutral-200">
-                      <Icon className="h-5 w-5 text-orange-400" strokeWidth={1.8} />
+                    <div
+                      key={point}
+                      className="flex items-center gap-2 text-sm text-neutral-200"
+                    >
+                      <Icon
+                        className="h-5 w-5 text-orange-400"
+                        strokeWidth={1.8}
+                      />
                       {label}
                     </div>
-                  )
+                  );
                 })}
               </div>
 
@@ -250,7 +286,10 @@ export function Home() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 bg-white pb-16 text-white sm:pb-20 lg:pb-24">
+      <section
+        id="contact"
+        className="scroll-mt-24 bg-white pb-16 text-white sm:pb-20 lg:pb-24"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative isolate overflow-hidden rounded-2xl border border-orange-500/25 bg-neutral-950 px-6 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.18)] sm:px-10 lg:px-14">
             <img
@@ -283,7 +322,9 @@ export function Home() {
                   <Phone className="h-6 w-6" strokeWidth={1.8} />
                 </span>
                 <span>
-                  <span className="block text-sm text-neutral-400">电话 / Phone</span>
+                  <span className="block text-sm text-neutral-400">
+                    电话 / Phone
+                  </span>
                   <span className="mt-1 block text-2xl font-semibold tracking-wide text-white">
                     {siteData.company.phone}
                   </span>
@@ -306,5 +347,5 @@ export function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
