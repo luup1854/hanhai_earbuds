@@ -1,24 +1,4 @@
-import {
-  ArrowRight,
-  BarChart3,
-  BatteryCharging,
-  Clock3,
-  Headphones,
-  Mail,
-  MessageCircle,
-  Mic2,
-  MapPin,
-  PlaySquare,
-  Phone,
-  Radio,
-  ShoppingBag,
-  ShoppingCart,
-  Star,
-  Store,
-  TrendingUp,
-  Video,
-  Wifi,
-} from 'lucide-react'
+import { ArrowRight, BatteryCharging, Clock3, Headphones, Mail, Mic2, MapPin, Phone, Store, Wifi } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteData } from '../data/siteData'
@@ -36,17 +16,6 @@ function HeroTitle({ title }: { title: string }) {
   )
 }
 
-const platformIcons: Record<string, LucideIcon> = {
-  抖音: PlaySquare,
-  淘宝: ShoppingBag,
-  天猫: Store,
-  京东: ShoppingCart,
-  拼多多: ShoppingBag,
-  小红书: MessageCircle,
-  快手: Video,
-  视频号: Radio,
-}
-
 const productPointIcons: Record<string, LucideIcon> = {
   低延迟: Clock3,
   清晰通话: Mic2,
@@ -55,8 +24,7 @@ const productPointIcons: Record<string, LucideIcon> = {
 }
 
 export function Home() {
-  const { hero, about, business, platforms, advantages, earbudsEntry } = siteData.home
-  const businessNote = business.find((item) => item.note)?.note
+  const { hero, about, business, advantages, earbudsEntry } = siteData.home
 
   return (
     <>
@@ -187,85 +155,52 @@ export function Home() {
                     <h3 className="mt-7 text-center text-2xl font-semibold text-white">{item.title}</h3>
                     <div className="mx-auto mt-4 h-1 w-8 rounded-full bg-orange-500" />
                     <p className="mt-5 text-left text-base leading-8 text-neutral-300">{item.description}</p>
+                    {item.note ? (
+                      <p className="mt-4 text-left text-base leading-8 text-neutral-300">
+                        {item.note}
+                      </p>
+                    ) : null}
                   </article>
-
-                  <div className="absolute -bottom-12 left-1/2 hidden h-12 w-px bg-orange-500/60 xl:block">
-                    <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_18px_rgba(249,115,22,0.8)]" />
-                    <span className="absolute bottom-0 left-0 h-px w-28 bg-orange-500/35 odd:hidden" />
-                  </div>
                 </div>
               )
             })}
           </div>
 
-          {businessNote ? (
-            <div className="relative mx-auto mt-16 max-w-6xl rounded-xl border border-orange-500/55 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.18),transparent_55%),linear-gradient(135deg,rgba(49,28,16,0.96),rgba(8,8,8,0.98))] p-5 shadow-[0_28px_90px_rgba(249,115,22,0.18)]">
-              <div className="absolute inset-2 rounded-lg border border-orange-500/20" />
-              <div className="relative grid gap-6 lg:grid-cols-[1.25fr_0.75fr_1.5fr] lg:items-center">
-                <div className="flex items-center gap-5">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-orange-500/45 text-orange-500">
-                    <Star className="h-9 w-9" strokeWidth={1.8} />
-                  </div>
-                  <div>
-                    <p className="text-xl font-semibold text-white">核心产品表现</p>
-                    <p className="mt-2 max-w-sm text-base leading-8 text-neutral-200">
-                      以宾利伯爵耳机、魔声耳机为核心产品
-                    </p>
-                  </div>
-                </div>
-
-                <div className="border-y border-orange-500/25 py-5 text-center lg:border-x lg:border-y-0 lg:py-0">
-                  <p className="text-6xl font-semibold leading-none text-orange-500 drop-shadow-[0_0_22px_rgba(249,115,22,0.45)]">
-                    5 万+
-                  </p>
-                  <p className="mt-2 text-lg text-neutral-200">台 / 月稳定销量</p>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-3">
-                  {[
-                    { label: '音频品类核心产品', icon: Headphones },
-                    { label: '多平台渠道运营', icon: BarChart3 },
-                    { label: '直播增长服务', icon: TrendingUp },
-                  ].map((tag) => {
-                    const TagIcon = tag.icon
-
-                    return (
-                      <div
-                        key={tag.label}
-                        className="flex items-center justify-center gap-2 rounded-md border border-orange-500/35 bg-black/20 px-4 py-3 text-sm font-medium text-neutral-200"
-                      >
-                        <TagIcon className="h-5 w-5 text-orange-500" strokeWidth={1.8} />
-                        {tag.label}
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-          ) : null}
         </div>
       </section>
-      <section id="platform" className="scroll-mt-24 bg-white py-14 text-neutral-950 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section
+        id="platform"
+        className="scroll-mt-24 bg-[radial-gradient(circle_at_50%_0%,rgba(15,23,42,0.08),transparent_30%),linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)] py-20 text-neutral-950 sm:py-24"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.36em] text-orange-600">
               PLATFORM MATRIX
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">平台矩阵</h2>
-            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
+            <h2 className="mt-4 text-4xl font-semibold text-neutral-900 sm:text-5xl">平台矩阵</h2>
+            <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-orange-500" />
           </div>
 
-          <div className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {platforms.map((platform) => {
-              const Icon = platformIcons[platform.name] ?? Store
+              const badge = platformBadges[platform.name] ?? {
+                mark: platform.name.slice(0, 1),
+                className: 'bg-neutral-950 text-white ring-neutral-200',
+              }
 
               return (
                 <div
                   key={platform.name}
-                  className="group flex h-16 items-center justify-center gap-2 rounded-lg border border-neutral-100 bg-white px-4 text-base font-semibold text-neutral-900 shadow-[0_12px_32px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-600 hover:shadow-[0_18px_44px_rgba(249,115,22,0.14)]"
+                  className="group flex min-h-32 items-center gap-6 rounded-xl border border-neutral-100 bg-white px-8 py-7 shadow-[0_18px_54px_rgba(15,23,42,0.09)] transition duration-300 hover:-translate-y-1.5 hover:border-orange-300 hover:shadow-[0_24px_70px_rgba(249,115,22,0.16)]"
                 >
-                  <Icon className="h-5 w-5 text-orange-500 transition duration-300 group-hover:scale-110" />
-                  {platform.name}
+                  <div
+                    className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl text-xl font-semibold shadow-lg ring-1 transition duration-300 group-hover:scale-105 ${badge.className}`}
+                  >
+                    {badge.mark}
+                  </div>
+                  <p className="text-2xl font-semibold text-neutral-900 transition duration-300 group-hover:text-orange-600">
+                    {platform.name}
+                  </p>
                 </div>
               )
             })}

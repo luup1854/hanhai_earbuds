@@ -127,12 +127,11 @@ export const siteData: SiteData = {
     icp: "ICP备案号占位",
   },
   nav: [
-    { label: "首页", href: "#home", type: "anchor" },
-    { label: "关于我们", href: "#about", type: "anchor" },
-    { label: "核心业务", href: "#business", type: "anchor" },
-    { label: "平台矩阵", href: "#platform", type: "anchor" },
-    { label: "蓝牙耳机", href: "/earbuds", type: "route" },
-    { label: "联系我们", href: "#contact", type: "anchor" },
+      { label: "首页", href: "#home", type: "anchor" },
+      { label: "关于我们", href: "#about", type: "anchor" },
+      { label: "核心业务", href: "#business", type: "anchor" },
+      { label: "蓝牙耳机", href: "/earbuds", type: "route" },
+      { label: "联系我们", href: "#contact", type: "anchor" },
   ],
   home: {
     hero: {
