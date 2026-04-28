@@ -40,7 +40,7 @@ export function ProductFeature({ section }: ProductFeatureProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-400">
             {section.eyebrow}
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+          <h2 className="mt-4 bg-gradient-to-r from-[#fff5d8] via-[#d8b56f] to-[#fff8df] bg-clip-text text-3xl font-semibold leading-tight text-transparent drop-shadow-[0_0_18px_rgba(216,181,111,0.24)] sm:text-4xl">
             {section.title}
           </h2>
           <div className="mt-5 h-1 w-12 rounded-full bg-orange-500" />

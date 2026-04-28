@@ -20,7 +20,6 @@ export function Footer() {
 
             <div className="flex flex-col gap-3 text-sm lg:items-end">
               <div className="flex flex-wrap gap-x-5 gap-y-2">
-                <span>税号：{siteData.company.taxId}</span>
                 <span>{siteData.company.icp}</span>
               </div>
 

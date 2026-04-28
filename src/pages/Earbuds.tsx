@@ -1,12 +1,10 @@
-import { ArrowRight } from 'lucide-react'
-import { Carousel } from '../components/Carousel'
-import { ProductFeature } from '../components/ProductFeature'
-import { ProductSpecTable } from '../components/ProductSpecTable'
-import { earbudsData } from '../data/earbudsData'
+import { ArrowRight } from "lucide-react";
+import { Carousel } from "../components/Carousel";
+import { ProductFeature } from "../components/ProductFeature";
+import { ProductSpecTable } from "../components/ProductSpecTable";
+import { earbudsData } from "../data/earbudsData";
 
 export function Earbuds() {
-  const AppIcon = earbudsData.appEntry.icon
-
   return (
     <div className="bg-black">
       <Carousel images={earbudsData.carouselImages} />
@@ -18,13 +16,15 @@ export function Earbuds() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-orange-400">
               CORE HIGHLIGHTS
             </p>
-            <h1 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">核心亮点</h1>
+            <h1 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+              核心亮点
+            </h1>
             <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {earbudsData.highlights.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon;
 
               return (
                 <article
@@ -34,16 +34,20 @@ export function Earbuds() {
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md border border-orange-500/35 text-orange-400 transition duration-300 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white">
                     <Icon className="h-7 w-7" strokeWidth={1.8} />
                   </div>
-                  <h2 className="text-xl font-semibold text-white">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-7 text-neutral-300">{item.description}</p>
+                  <h2 className="text-xl font-semibold text-white">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-neutral-300">
+                    {item.description}
+                  </p>
                 </article>
-              )
+              );
             })}
           </div>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {earbudsData.quickPoints.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon;
 
               return (
                 <span
@@ -53,7 +57,7 @@ export function Earbuds() {
                   <Icon className="h-4 w-4 text-orange-400" />
                   {item.label}
                 </span>
-              )
+              );
             })}
           </div>
         </div>
@@ -65,7 +69,7 @@ export function Earbuds() {
 
       <ProductSpecTable specs={earbudsData.specs} />
 
-      <section className="relative overflow-hidden bg-neutral-950 py-16 text-white sm:py-20">
+      <section id="download" className="relative scroll-mt-24 overflow-hidden bg-neutral-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative isolate overflow-hidden rounded-2xl border border-orange-500/30 bg-black p-8 shadow-[0_24px_90px_rgba(0,0,0,0.45)] sm:p-10 lg:p-12">
             <img
@@ -77,10 +81,7 @@ export function Earbuds() {
             <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.66)_45%,rgba(0,0,0,0.2)_100%)]" />
 
             <div className="max-w-2xl">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md border border-orange-500/40 bg-orange-500/10 text-orange-300">
-                <AppIcon className="h-6 w-6" />
-              </div>
-              <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+              <h2 className="bg-gradient-to-r from-[#fff5d8] via-[#d8b56f] to-[#fff8df] bg-clip-text text-3xl font-semibold leading-tight text-transparent drop-shadow-[0_0_18px_rgba(216,181,111,0.24)] sm:text-4xl">
                 {earbudsData.appEntry.title}
               </h2>
               <p className="mt-5 text-base leading-8 text-neutral-300 sm:text-lg">
@@ -99,5 +100,5 @@ export function Earbuds() {
         </div>
       </section>
     </div>
-  )
+  );
 }

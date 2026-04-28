@@ -1,4 +1,4 @@
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Download, Menu, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
@@ -16,6 +16,7 @@ export function Header() {
 
   const productNav = useMemo(() => siteData.nav.find((item) => item.href === '/earbuds'), [])
   const centerNav = useMemo(() => siteData.nav.filter((item) => item.href !== '/earbuds'), [])
+  const isEarbudsPage = location.pathname === '/earbuds'
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 16)
@@ -28,8 +29,7 @@ export function Header() {
 
   useEffect(() => {
     setIsMenuOpen(false)
-
-    if (location.pathname === '/' && location.hash) {
+    if (location.hash) {
       window.setTimeout(() => scrollToAnchor(location.hash), 80)
     }
   }, [location.pathname, location.hash])
@@ -116,8 +116,25 @@ export function Header() {
           {centerNav.map((item) => renderNavItem(item))}
         </nav>
 
-        <div className="hidden items-center lg:flex">
-          {productNav ? (
+        <div className="hidden items-center gap-3 lg:flex">
+          {isEarbudsPage ? (
+            <>
+              <Link
+                to="/earbuds#download"
+                className="inline-flex items-center gap-2 rounded-full border border-orange-500/45 bg-white/5 px-5 py-2.5 text-sm font-semibold text-orange-200 transition hover:-translate-y-0.5 hover:border-orange-400 hover:bg-orange-500/10 hover:text-orange-100"
+              >
+                <Download className="h-4 w-4" />
+                APP下载
+              </Link>
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                回到首页
+              </Link>
+            </>
+          ) : productNav ? (
             <Link
               to={productNav.href}
               className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:-translate-y-0.5 hover:bg-orange-400"
@@ -145,7 +162,25 @@ export function Header() {
         }`}
       >
         <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
-          {siteData.nav.map((item) => renderNavItem(item, true))}
+          {(isEarbudsPage ? centerNav : siteData.nav).map((item) => renderNavItem(item, true))}
+          {isEarbudsPage ? (
+            <>
+              <Link
+                to="/earbuds#download"
+                className="mt-2 flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium text-orange-200 transition hover:bg-white/5 hover:text-orange-400"
+              >
+                <Download className="h-4 w-4" />
+                APP下载
+              </Link>
+              <Link
+                to="/"
+                className="flex items-center gap-2 rounded-md bg-orange-500 px-3 py-3 text-base font-semibold text-black transition hover:bg-orange-400"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                回到首页
+              </Link>
+            </>
+          ) : null}
         </nav>
       </div>
     </header>

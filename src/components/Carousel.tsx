@@ -36,18 +36,18 @@ export function Carousel({ images, interval = 4000 }: CarouselProps) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
+      <div className="relative h-[260px] bg-black sm:h-[420px] lg:h-[620px]">
         {images.map((image, index) => (
           <img
             key={image.src}
             src={image.src}
             alt={image.alt}
-            className={`absolute inset-0 h-full w-full object-cover transition duration-700 ${
+            className={`absolute inset-0 h-full w-full object-contain transition duration-700 ${
               activeIndex === index ? 'opacity-100' : 'opacity-0'
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.34)_0%,rgba(0,0,0,0.06)_46%,rgba(0,0,0,0.46)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,0)_46%,rgba(0,0,0,0.28)_100%)]" />
       </div>
 
       <button
