@@ -1,4 +1,4 @@
-import { ArrowRight, BatteryCharging, Clock3, Headphones, Mail, Mic2, MapPin, Phone, Store, Wifi } from 'lucide-react'
+import { ArrowRight, BatteryCharging, Clock3, Headphones, Mic2, MapPin, Phone, Wifi } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteData } from '../data/siteData'
@@ -168,45 +168,7 @@ export function Home() {
 
         </div>
       </section>
-      <section
-        id="platform"
-        className="scroll-mt-24 bg-[radial-gradient(circle_at_50%_0%,rgba(15,23,42,0.08),transparent_30%),linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)] py-20 text-neutral-950 sm:py-24"
-      >
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.36em] text-orange-600">
-              PLATFORM MATRIX
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold text-neutral-900 sm:text-5xl">平台矩阵</h2>
-            <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-orange-500" />
-          </div>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {platforms.map((platform) => {
-              const badge = platformBadges[platform.name] ?? {
-                mark: platform.name.slice(0, 1),
-                className: 'bg-neutral-950 text-white ring-neutral-200',
-              }
-
-              return (
-                <div
-                  key={platform.name}
-                  className="group flex min-h-32 items-center gap-6 rounded-xl border border-neutral-100 bg-white px-8 py-7 shadow-[0_18px_54px_rgba(15,23,42,0.09)] transition duration-300 hover:-translate-y-1.5 hover:border-orange-300 hover:shadow-[0_24px_70px_rgba(249,115,22,0.16)]"
-                >
-                  <div
-                    className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl text-xl font-semibold shadow-lg ring-1 transition duration-300 group-hover:scale-105 ${badge.className}`}
-                  >
-                    {badge.mark}
-                  </div>
-                  <p className="text-2xl font-semibold text-neutral-900 transition duration-300 group-hover:text-orange-600">
-                    {platform.name}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       <section className="bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -288,72 +250,56 @@ export function Home() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
+      <section id="contact" className="scroll-mt-24 bg-white pb-16 text-white sm:pb-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">
-              CONTACT US
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-neutral-950 sm:text-4xl">联系我们</h2>
-            <div className="mx-auto mt-4 h-1 w-10 rounded-full bg-orange-500" />
-          </div>
+          <div className="relative isolate overflow-hidden rounded-2xl border border-orange-500/25 bg-neutral-950 px-6 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.18)] sm:px-10 lg:px-14">
+            <img
+              src="/images/联系我们.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,0,0,0.34)_0%,rgba(0,0,0,0.18)_52%,rgba(0,0,0,0.06)_100%)]" />
 
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                { label: '电话', value: siteData.company.phone, icon: Phone },
-                { label: '公司邮箱', value: siteData.company.email, icon: Mail },
-                { label: '地址（中国）', value: `中国 ${siteData.company.addressCn}`, icon: MapPin, wide: true },
-              ].map((item) => {
-                const Icon = item.icon
-
-                return (
-                  <div
-                    key={item.label}
-                    className={`group rounded-xl border border-neutral-100 bg-white p-5 shadow-[0_14px_42px_rgba(15,23,42,0.07)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_20px_54px_rgba(249,115,22,0.12)] ${
-                      item.wide ? 'sm:col-span-2' : ''
-                    }`}
-                  >
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-orange-50 text-orange-600 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                      <Icon className="h-5 w-5" strokeWidth={1.9} />
-                    </div>
-                    <p className="text-sm font-semibold text-neutral-950">{item.label}</p>
-                    <p className="mt-2 break-words text-sm leading-7 text-neutral-600">{item.value}</p>
-                  </div>
-                )
-              })}
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium uppercase tracking-[0.28em] text-neutral-400">
+                CONTACT US
+              </p>
+              <h2 className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                联系<span className="text-orange-500">我们</span>
+              </h2>
+              <div className="mt-5 h-1 w-10 rounded-full bg-orange-500" />
+              <p className="mt-5 text-base leading-7 text-neutral-300">
+                欢迎洽谈品牌代理、直播运营与渠道合作
+              </p>
             </div>
 
-            <div className="relative isolate overflow-hidden rounded-xl border border-neutral-900 bg-neutral-950 p-6 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
-              <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_0%,rgba(249,115,22,0.24),transparent_34%),linear-gradient(145deg,#171717,#050505)]" />
-              <div className="flex h-full flex-col justify-between gap-8">
-                <div className="space-y-6">
-                  <div>
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-orange-500/35 bg-orange-500/10 text-orange-400">
-                      <Store className="h-5 w-5" strokeWidth={1.8} />
-                    </div>
-                    <p className="text-sm font-semibold text-orange-300">公司英文名</p>
-                    <p className="mt-2 text-base leading-8 text-neutral-200">{siteData.company.nameEn}</p>
-                  </div>
+            <div className="mt-8 grid max-w-[860px] gap-3 lg:grid-cols-[0.42fr_0.58fr]">
+              <a
+                href={`tel:${siteData.company.phone}`}
+                className="group flex items-center gap-4 rounded-xl border border-orange-500/40 bg-black/35 p-4 shadow-[0_18px_46px_rgba(249,115,22,0.12)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-orange-400"
+              >
+                <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border border-orange-500 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  <Phone className="h-6 w-6" strokeWidth={1.8} />
+                </span>
+                <span>
+                  <span className="block text-sm text-neutral-400">电话 / Phone</span>
+                  <span className="mt-1 block text-2xl font-semibold tracking-wide text-white">
+                    {siteData.company.phone}
+                  </span>
+                </span>
+              </a>
 
-                  <div>
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md border border-orange-500/35 bg-orange-500/10 text-orange-400">
-                      <MapPin className="h-5 w-5" strokeWidth={1.8} />
-                    </div>
-                    <p className="text-sm font-semibold text-orange-300">英文地址</p>
-                    <p className="mt-2 text-sm leading-7 text-neutral-300">
-                      {siteData.company.addressEn}
-                    </p>
-                  </div>
+              <div className="group flex items-center gap-4 rounded-xl border border-orange-500/25 bg-black/30 p-4 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-[0_18px_46px_rgba(249,115,22,0.12)]">
+                <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border border-orange-500 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  <MapPin className="h-6 w-6" strokeWidth={1.8} />
+                </span>
+                <div>
+                  <p className="text-sm text-neutral-400">地址 / Address</p>
+                  <p className="mt-1 text-sm font-medium leading-7 text-white">
+                    {siteData.company.addressCn}
+                  </p>
                 </div>
-
-                <a
-                  href={`tel:${siteData.company.phone}`}
-                  className="group inline-flex items-center justify-center gap-3 self-start rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/20 transition duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-orange-500"
-                >
-                  立即联系
-                  <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
-                </a>
               </div>
             </div>
           </div>

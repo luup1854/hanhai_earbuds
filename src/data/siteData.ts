@@ -67,10 +67,6 @@ export type BusinessItem = {
   note?: string;
 };
 
-export type PlatformItem = {
-  name: string;
-};
-
 export type AdvantageItem = {
   title: string;
   description: string;
@@ -103,7 +99,6 @@ export type SiteData = {
     hero: HeroContent;
     about: AboutContent;
     business: BusinessItem[];
-    platforms: PlatformItem[];
     advantages: AdvantageItem[];
     earbudsEntry: EarbudsEntry;
   };
@@ -208,16 +203,6 @@ export const siteData: SiteData = {
           "覆盖抖音、淘宝、天猫、京东、拼多多、小红书、快手、视频号等平台，构建多平台协同增长体系。",
         icon: Grid2X2,
       },
-    ],
-    platforms: [
-      { name: "抖音" },
-      { name: "淘宝" },
-      { name: "天猫" },
-      { name: "京东" },
-      { name: "拼多多" },
-      { name: "小红书" },
-      { name: "快手" },
-      { name: "视频号" },
     ],
     advantages: [
       {
