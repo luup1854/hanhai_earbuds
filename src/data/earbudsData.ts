@@ -44,11 +44,11 @@ export type ProductSpec = {
 export const earbudsData = {
   name: "宾利伯爵耳机",
   carouselImages: [
-    { src: "/images/earbuds/轮播图1.png", alt: "宾利伯爵耳机轮播图 1" },
-    { src: "/images/earbuds/轮播图2.png", alt: "宾利伯爵耳机轮播图 2" },
-    { src: "/images/earbuds/轮播图3.png", alt: "宾利伯爵耳机轮播图 3" },
-    { src: "/images/earbuds/轮播图4.png", alt: "宾利伯爵耳机轮播图 4" },
-    { src: "/images/earbuds/轮播图5.png", alt: "宾利伯爵耳机轮播图 5" },
+    { src: "/images/earbuds/轮播图1.webp", alt: "宾利伯爵耳机轮播图 1" },
+    { src: "/images/earbuds/轮播图2.webp", alt: "宾利伯爵耳机轮播图 2" },
+    { src: "/images/earbuds/轮播图3.webp", alt: "宾利伯爵耳机轮播图 3" },
+    { src: "/images/earbuds/轮播图4.webp", alt: "宾利伯爵耳机轮播图 4" },
+    { src: "/images/earbuds/轮播图5.webp", alt: "宾利伯爵耳机轮播图 5" },
   ] satisfies CarouselImage[],
   highlights: [
     {
