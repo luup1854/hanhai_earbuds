@@ -86,7 +86,7 @@ export const earbudsData = {
       description:
         "内置AI，实时语音助手与无缝跨语言沟通。是专属于您的听觉智能伙伴。",
       image: {
-        src: "/images/earbuds/云端大模型原声AI升级.png",
+        src: "/images/earbuds/云端大模型原声AI升级.webp",
         alt: "云端大模型原声AI升级功能展示",
       },
       tags: ["AI 对话", "AI 速记", "AI 翻译", "AI 搜索"],
@@ -97,7 +97,7 @@ export const earbudsData = {
       description:
         "创新来式计以流光彩育机，更是日常穿搭时尚配饰，升级您的出街LOOK。",
       image: {
-        src: "/images/earbuds/时尚感轻松拿捏.png",
+        src: "/images/earbuds/时尚感轻松拿捏.webp",
         alt: "时尚感轻松拿捏佩戴展示",
       },
       tags: ["轻盈佩戴", "耳夹结构", "出街穿搭", "日常通勤"],
@@ -108,7 +108,7 @@ export const earbudsData = {
       title: "石墨烯喇叭，影院级音效",
       description: "高保真扬声器,多动圈全频解析,降低声波共振,音质更清晰",
       image: {
-        src: "/images/earbuds/石墨烯喇叭.png",
+        src: "/images/earbuds/石墨烯喇叭.webp",
         alt: "石墨烯喇叭影院级音效展示",
       },
       tags: ["高保真音质", "多频解析", "清晰人声", "沉浸聆听"],
@@ -119,7 +119,7 @@ export const earbudsData = {
       description:
         "搭载蓝牙V6.0技术，传输速度更快，抗干扰能力更强复杂场景下也能保持稳定连接。",
       image: {
-        src: "/images/earbuds/蓝牙V6.0.png",
+        src: "/images/earbuds/蓝牙V6.0.webp",
         alt: "蓝牙 V6.0 稳定连接展示",
       },
       tags: ["快速配对", "低延迟", "长续航", "低功耗"],
@@ -140,7 +140,7 @@ export const earbudsData = {
     title: "探索更多精彩，开启智能聆听新体验",
     description: "",
     image: {
-      src: "/images/earbuds/底部.png",
+      src: "/images/earbuds/底部.webp",
       alt: "宾利伯爵耳机底部产品展示",
     },
     actionLabel: "了解更多 / 点击下载",
