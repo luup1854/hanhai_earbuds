@@ -111,7 +111,7 @@ export const siteData: SiteData = {
     nameCn: "深圳市皓承智能设备有限公司",
     nameEn: "Shenzhen Haocheng Intelligent Equipment Company Limited",
     logo: "/images/logo.png",
-    phone: "13534052763",
+    phone: "18998910326",
     email: "info@haochengholdings.com",
     addressCn:
       "深圳市龙华区大浪街道龙平社区腾龙路淘金地电子商务孵化基地展滔商业广场B座516",
@@ -120,11 +120,11 @@ export const siteData: SiteData = {
     icp: "ICP备案号占位",
   },
   nav: [
-      { label: "首页", href: "#home", type: "anchor" },
-      { label: "关于我们", href: "#about", type: "anchor" },
-      { label: "核心业务", href: "#business", type: "anchor" },
-      { label: "蓝牙耳机", href: "/earbuds", type: "route" },
-      { label: "联系我们", href: "#contact", type: "anchor" },
+    { label: "首页", href: "#home", type: "anchor" },
+    { label: "关于我们", href: "#about", type: "anchor" },
+    { label: "核心业务", href: "#business", type: "anchor" },
+    { label: "蓝牙耳机", href: "/earbuds", type: "route" },
+    { label: "联系我们", href: "#contact", type: "anchor" },
   ],
   home: {
     hero: {
