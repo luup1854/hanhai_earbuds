@@ -136,24 +136,48 @@ export function Home() {
         </div>
       </section>
 
-      <section className="bg-white pb-16 text-white sm:pb-20 lg:pb-24">
+      <section className="bg-white pb-16 text-neutral-950 sm:pb-20 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl bg-orange-600 px-6 py-14 text-center shadow-[0_24px_70px_rgba(249,115,22,0.24)] sm:px-10 lg:px-16">
-            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(180deg,transparent_0%,black_56%,transparent_100%)]" />
-            <div className="relative mx-auto max-w-4xl">
-              <p className="text-sm font-medium uppercase tracking-[0.22em] text-orange-100">
+          <div className="relative overflow-hidden rounded-3xl border border-orange-100 bg-white px-6 py-14 text-center shadow-[0_24px_80px_rgba(15,23,42,0.09)] sm:px-10 lg:px-16">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.10),transparent_42%)]" />
+            <div className="absolute -left-32 bottom-0 h-72 w-[52rem] rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.24),rgba(249,115,22,0.08)_48%,transparent_70%)] blur-sm" />
+            <div className="absolute -right-28 bottom-0 h-72 w-[48rem] rounded-[50%] bg-[linear-gradient(135deg,transparent_0%,rgba(251,146,60,0.16)_35%,rgba(249,115,22,0.82)_100%)]" />
+            <div className="absolute left-8 top-8 h-28 w-32 opacity-20 [background-image:radial-gradient(circle,rgba(249,115,22,0.85)_2px,transparent_2px)] [background-size:14px_14px]" />
+            <div className="absolute right-8 top-32 h-24 w-32 opacity-20 [background-image:radial-gradient(circle,rgba(249,115,22,0.85)_2px,transparent_2px)] [background-size:14px_14px]" />
+
+            <div className="relative mx-auto max-w-5xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.34em] text-orange-600">
                 {operationPrinciple.eyebrow}
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+              <h2 className="mt-4 text-4xl font-semibold text-neutral-950 sm:text-5xl">
                 {operationPrinciple.title}
               </h2>
-              <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-white/85" />
-              <div className="mt-10 space-y-6 text-lg leading-9 text-white sm:text-2xl">
-                {operationPrinciple.lines.map((line, index) => (
-                  <p key={line} className={index === 1 ? "font-semibold" : ""}>
-                    {line}
-                  </p>
-                ))}
+              <div className="mx-auto mt-5 h-1 w-12 rounded-full bg-orange-500" />
+              <p className="mt-6 text-xl leading-8 text-neutral-700">
+                {operationPrinciple.description}
+              </p>
+
+              <div className="mt-10 grid gap-5 lg:grid-cols-3">
+                {operationPrinciple.cards.map((card) => {
+                  const Icon = card.icon;
+
+                  return (
+                    <article
+                      key={card.title}
+                      className="group flex items-center gap-5 rounded-2xl border border-orange-100 bg-white/90 p-6 text-left shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_24px_70px_rgba(249,115,22,0.14)]"
+                    >
+                      <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                        <Icon className="h-10 w-10" strokeWidth={1.8} />
+                      </div>
+                      <div className="border-l border-orange-300 pl-5">
+                        <h3 className="text-2xl font-semibold text-neutral-950">{card.title}</h3>
+                        <p className="mt-2 text-base leading-7 text-neutral-600">
+                          {card.description}
+                        </p>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </div>

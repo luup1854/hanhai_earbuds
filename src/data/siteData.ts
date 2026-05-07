@@ -2,6 +2,7 @@ import {
   Boxes,
   Crown,
   FileText,
+  Gem,
   Grid2X2,
   Handshake,
   Layers3,
@@ -10,6 +11,7 @@ import {
   Route,
   Settings,
   Tag,
+  UserRound,
   Video,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -62,7 +64,12 @@ export type AboutContent = {
 export type OperationPrinciple = {
   eyebrow: string;
   title: string;
-  lines: string[];
+  description: string;
+  cards: Array<{
+    title: string;
+    description: string;
+    icon: LucideIcon;
+  }>;
 };
 
 export type BusinessItem = {
@@ -185,10 +192,23 @@ export const siteData: SiteData = {
     operationPrinciple: {
       eyebrow: "OPERATION PRINCIPLE",
       title: "经营理念",
-      lines: [
-        "公司始终将客户服务体验放在首位",
-        "秉承“以客户为中心”的核心价值观",
-        "提供全面高质量的服务解决方案",
+      description: "公司始终将客户服务体验放在首位",
+      cards: [
+        {
+          title: "客户至上",
+          description: "秉承“以客户为中心”的核心价值观",
+          icon: UserRound,
+        },
+        {
+          title: "专业服务",
+          description: "提供专业、高效、可落地的服务支持",
+          icon: Handshake,
+        },
+        {
+          title: "品质方案",
+          description: "提供全面高质量的服务解决方案",
+          icon: Gem,
+        },
       ],
     },
     business: [
