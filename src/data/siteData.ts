@@ -3,13 +3,13 @@ import {
   Crown,
   FileText,
   Grid2X2,
+  Handshake,
   Layers3,
   MonitorPlay,
   PackageSearch,
   Route,
   Settings,
   Tag,
-  UsersRound,
   Video,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -59,6 +59,12 @@ export type AboutContent = {
   }>;
 };
 
+export type OperationPrinciple = {
+  eyebrow: string;
+  title: string;
+  lines: string[];
+};
+
 export type BusinessItem = {
   title: string;
   description: string;
@@ -97,6 +103,7 @@ export type SiteData = {
   home: {
     hero: HeroContent;
     about: AboutContent;
+    operationPrinciple: OperationPrinciple;
     business: BusinessItem[];
     advantages: AdvantageItem[];
     earbudsEntry: EarbudsEntry;
@@ -128,10 +135,10 @@ export const siteData: SiteData = {
   ],
   home: {
     hero: {
-      title: "专注 3C 数码与内容电商增长",
-      subtitle: "品牌代理 × 直播电商运营 × 主播孵化 × 多平台渠道运营",
+      title: "综合性供应链服务商",
+      subtitle: "品牌代理 × 直播电商运营 × 供应链服务 × 多平台渠道运营",
       description:
-        "我们整合优质品牌、内容创作与多平台流量资源，以专业的电商运营能力与精细化执行，助力品牌实现内容营销与电商销售的高效增长。",
+        "我们整合优质品牌、供应链资源与多平台渠道能力，以专业服务和精细化执行，为品牌商与客户搭建高效沟通桥梁，提供稳定可靠的供应链解决方案。",
       image: {
         src: "/images/hero-earbuds.jpg",
         alt: "宾利伯爵耳机首屏视觉图",
@@ -148,8 +155,8 @@ export const siteData: SiteData = {
     about: {
       title: "关于皓承智能设备",
       paragraphs: [
-        "深圳市皓承智能设备有限公司是一家专注于 3C 数码与内容电商领域的综合服务商，核心聚焦品牌代理、直播电商运营、主播孵化与多平台渠道运营，为品牌在内容电商生态中实现持续增长提供系统化解决方案。",
-        "公司以消费者需求与内容趋势为导向，围绕“选品—内容—流量—转化—复盘”的完整链路，整合品牌资源、平台渠道与直播运营能力，帮助品牌提升曝光、转化与长期经营效率。",
+        "深圳市皓承智能设备有限公司是一家综合性供应链服务商，业务涵盖 3C 智能电子、智能办公设备及办公用品、日用洗护、食品、家电等品类，提供多样化供应链服务。",
+        "公司为品牌商和客户搭建沟通桥梁，提供专业服务和高效管理，运用信息技术和数据分析，确保供应链精准对接和运作。",
         "公司秉承以长期价值为目标，持续深耕高潜力赛道与品牌源，以专业团队与精细化运营能力，为品牌合作伙伴创造可持续的生意增长。",
       ],
       highlights: [
@@ -169,13 +176,28 @@ export const siteData: SiteData = {
           icon: Route,
         },
         {
-          title: "内容转化与复盘",
-          description: "内容创作与结果复盘结合，持续提升转化效率。",
+          title: "供应链精准对接",
+          description: "以信息技术与数据分析提升供应链对接效率与运作质量。",
           icon: FileText,
         },
       ],
     },
+    operationPrinciple: {
+      eyebrow: "OPERATION PRINCIPLE",
+      title: "经营理念",
+      lines: [
+        "公司始终将客户服务体验放在首位",
+        "秉承“以客户为中心”的核心价值观",
+        "提供全面高质量的服务解决方案",
+      ],
+    },
     business: [
+      {
+        title: "综合性供应链服务",
+        description:
+          "业务涵盖 3C 智能电子、智能办公设备及办公用品、日用洗护、食品、家电等，提供多样化供应链服务。",
+        icon: Handshake,
+      },
       {
         title: "3C 品牌代理",
         description:
@@ -188,12 +210,6 @@ export const siteData: SiteData = {
         description:
           "提供直播间策划、脚本设计、主播排班、场控执行、数据复盘等运营服务，打造高效转化的直播场景。",
         icon: Video,
-      },
-      {
-        title: "主播孵化陪跑",
-        description:
-          "从选拔、培训到实战陪跑，帮助主播提升表达能力、产品理解力与直播转化能力。",
-        icon: UsersRound,
       },
       {
         title: "多平台渠道运营",

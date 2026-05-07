@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { siteData } from "../data/siteData";
 
 function HeroTitle({ title }: { title: string }) {
-  const emphasis = "3C 数码";
+  const emphasis = title.includes("供应链") ? "供应链" : "3C 数码";
   const [before, after] = title.split(emphasis);
 
   return (
@@ -33,7 +33,7 @@ const productPointIcons: Record<string, LucideIcon> = {
 };
 
 export function Home() {
-  const { hero, about, business, advantages, earbudsEntry } = siteData.home;
+  const { hero, about, operationPrinciple, business, advantages, earbudsEntry } = siteData.home;
 
   return (
     <>
@@ -132,6 +132,30 @@ export function Home() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-16 text-white sm:pb-20 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl bg-orange-600 px-6 py-14 text-center shadow-[0_24px_70px_rgba(249,115,22,0.24)] sm:px-10 lg:px-16">
+            <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle,rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(180deg,transparent_0%,black_56%,transparent_100%)]" />
+            <div className="relative mx-auto max-w-4xl">
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-orange-100">
+                {operationPrinciple.eyebrow}
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                {operationPrinciple.title}
+              </h2>
+              <div className="mx-auto mt-6 h-1 w-12 rounded-full bg-white/85" />
+              <div className="mt-10 space-y-6 text-lg leading-9 text-white sm:text-2xl">
+                {operationPrinciple.lines.map((line, index) => (
+                  <p key={line} className={index === 1 ? "font-semibold" : ""}>
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
