@@ -25,6 +25,7 @@ export type CompanyInfo = {
   addressCn: string;
   addressEn: string;
   icp: string;
+  icpUrl: string;
 };
 
 export type NavItem = {
@@ -131,7 +132,8 @@ export const siteData: SiteData = {
       "深圳市龙华区大浪街道龙平社区腾龙路淘金地电子商务孵化基地展滔商业广场B座516",
     addressEn:
       "516 B ZHANTAO COMMERCIAL PLAZA TENGLONG ROAD DALANG STREET LONGHUA DISTRICT SHENZHEN CHN",
-    icp: "ICP备案号占位",
+    icp: "粤ICP备2025419555号",
+    icpUrl: "https://beian.miit.gov.cn/",
   },
   nav: [
     { label: "首页", href: "#home", type: "anchor" },
@@ -276,8 +278,8 @@ export const siteData: SiteData = {
   },
   footer: {
     links: [
-      { label: "隐私政策", href: "#" },
-      { label: "用户协议", href: "#" },
+      { label: "隐私政策", href: "/privacy" },
+      { label: "用户协议", href: "/terms" },
       { label: "下载说明", href: "#" },
       { label: "账号注销说明", href: "#" },
     ],

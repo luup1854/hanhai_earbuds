@@ -1,4 +1,5 @@
 import { siteData } from '../data/siteData'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
   return (
@@ -20,14 +21,28 @@ export function Footer() {
 
             <div className="flex flex-col gap-3 text-sm lg:items-end">
               <div className="flex flex-wrap gap-x-5 gap-y-2">
-                <span>{siteData.company.icp}</span>
+                <a
+                  href={siteData.company.icpUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition hover:text-orange-400"
+                >
+                  {siteData.company.icp}
+                </a>
+                <span>© 2026 {siteData.company.nameCn}. All Rights Reserved.</span>
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-2">
                 {siteData.footer.links.map((link) => (
-                  <a key={link.label} href={link.href} className="transition hover:text-orange-400">
-                    {link.label}
-                  </a>
+                  link.href.startsWith('/') ? (
+                    <Link key={link.label} to={link.href} className="transition hover:text-orange-400">
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a key={link.label} href={link.href} className="transition hover:text-orange-400">
+                      {link.label}
+                    </a>
+                  )
                 ))}
               </div>
             </div>
