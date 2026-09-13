@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     const titles: Record<string, string> = {
       '/': '深圳市皓承智能设备有限公司｜首页',
-      '/earbuds': '深圳市皓承智能设备有限公司｜宾利伯爵耳机',
+      '/earbuds': '深圳市皓承智能设备有限公司｜DOSS蓝牙耳机',
       '/privacy': '隐私政策｜深圳市皓承智能设备有限公司',
       '/terms': '用户协议｜深圳市皓承智能设备有限公司',
     }

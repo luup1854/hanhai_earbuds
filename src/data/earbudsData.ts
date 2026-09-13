@@ -1,15 +1,12 @@
 import {
   Bot,
   BrainCircuit,
-  Clock3,
   Headphones,
   Languages,
   Mic2,
   Search,
   ShieldCheck,
   Volume2,
-  Wifi,
-  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -42,13 +39,13 @@ export type ProductSpec = {
 };
 
 export const earbudsData = {
-  name: "宾利伯爵耳机",
+  name: "DOSS蓝牙耳机",
   carouselImages: [
-    { src: "/images/earbuds/轮播图1.webp", alt: "宾利伯爵耳机轮播图 1" },
-    { src: "/images/earbuds/轮播图2.webp", alt: "宾利伯爵耳机轮播图 2" },
-    { src: "/images/earbuds/轮播图3.webp", alt: "宾利伯爵耳机轮播图 3" },
-    { src: "/images/earbuds/轮播图4.webp", alt: "宾利伯爵耳机轮播图 4" },
-    { src: "/images/earbuds/轮播图5.webp", alt: "宾利伯爵耳机轮播图 5" },
+    { src: "/images/earbuds/轮播图1.webp", alt: "DOSS蓝牙耳机轮播图 1" },
+    { src: "/images/earbuds/轮播图2.webp", alt: "DOSS蓝牙耳机轮播图 2" },
+    { src: "/images/earbuds/轮播图3.webp", alt: "DOSS蓝牙耳机轮播图 3" },
+    { src: "/images/earbuds/轮播图4.webp", alt: "DOSS蓝牙耳机轮播图 4" },
+    { src: "/images/earbuds/轮播图5.webp", alt: "DOSS蓝牙耳机轮播图 5" },
   ] satisfies CarouselImage[],
   highlights: [
     {
@@ -68,9 +65,9 @@ export const earbudsData = {
       icon: Volume2,
     },
     {
-      title: "稳定蓝牙连接",
-      description: "蓝牙 V6.0 连接方案，提升连接稳定性与抗干扰能力。",
-      icon: Wifi,
+      title: "AI 实时翻译",
+      description: "支持跨语言语音翻译场景，沟通交流更轻松，适合出行、学习与商务沟通。",
+      icon: Languages,
     },
   ] satisfies EarbudsHighlight[],
   aiFeatures: [
@@ -93,9 +90,9 @@ export const earbudsData = {
     },
     {
       eyebrow: "FASHION FIT",
-      title: "时尚感轻松拿捏是耳机,更是潮流耳饰",
+      title: "时尚感轻松拿捏，是耳机，更是潮流耳饰",
       description:
-        "创新来式计以流光彩育机，更是日常穿搭时尚配饰，升级您的出街LOOK。",
+        "创新耳夹式设计，以流光配色与轻盈材质融合，不只是蓝牙耳机，更是日常穿搭时尚配饰，升级您的出街 LOOK。",
       image: {
         src: "/images/earbuds/时尚感轻松拿捏.webp",
         alt: "时尚感轻松拿捏佩戴展示",
@@ -106,7 +103,7 @@ export const earbudsData = {
     {
       eyebrow: "ACOUSTIC QUALITY",
       title: "石墨烯喇叭，影院级音效",
-      description: "高保真扬声器,多动圈全频解析,降低声波共振,音质更清晰",
+      description: "高保真扬声器，多动圈全频解析，降低声波共振，音质更清晰。",
       image: {
         src: "/images/earbuds/石墨烯喇叭.webp",
         alt: "石墨烯喇叭影院级音效展示",
@@ -127,29 +124,36 @@ export const earbudsData = {
     },
   ] satisfies ProductSection[],
   specs: [
+    { label: "产品名称", value: "DOSS蓝牙耳机" },
     { label: "产品型号", value: "BentleyB60" },
-    { label: "通讯距离", value: "10米（无障碍空旷环境）" },
+    { label: "颜色", value: "沉稳黑、星光银、樱花粉、活力橙" },
+    { label: "材质", value: "金属+皮革" },
+    { label: "重量", value: "≈82g" },
     { label: "蓝牙版本", value: "V6.0" },
-    { label: "频率响应", value: "20Hz~10KHZ" },
-    { label: "喇叭曲线灵敏度", value: "113 ±3dB（At 1KHz）" },
+    { label: "通讯距离", value: "≈10m（无障碍空旷环境）" },
+    { label: "适用", value: "具有蓝牙功能的播放设备" },
+    { label: "耳机电池容量", value: "3.7V/40mAh" },
+    { label: "充电仓电池容量", value: "3.7V/400mAh" },
     { label: "耳机充电时间", value: "约1.5小时" },
-    { label: "耳机内置电池", value: "3.8V/40mAh" },
-    { label: "充电仓内置电池", value: "3.7V/400mAh" },
+    { label: "充电接口", value: "Type-C" },
+    { label: "频响范围", value: "20Hz-10kHz" },
+    { label: "喇叭曲线灵敏度", value: "113 ±3dB（At 1KHz）" },
   ] satisfies ProductSpec[],
+  specNote: "外观尺寸约 81mm × 30mm × 40mm；以上参数为手工测量，3-5mm 误差属正常现象。",
   appEntry: {
     title: "探索更多精彩，开启智能聆听新体验",
     description: "",
     image: {
       src: "/images/earbuds/底部.webp",
-      alt: "宾利伯爵耳机底部产品展示",
+      alt: "DOSS蓝牙耳机底部产品展示",
     },
     actionLabel: "了解更多 / 点击下载",
     actionHref: "#",
   },
   quickPoints: [
-    { label: "低延迟", icon: Clock3 },
+    { label: "AI 翻译", icon: Languages },
+    { label: "AI 速记", icon: Mic2 },
+    { label: "高清音质", icon: Volume2 },
     { label: "稳定连接", icon: ShieldCheck },
-    { label: "AI 交互", icon: BrainCircuit },
-    { label: "便携充电", icon: Zap },
   ],
 } as const;

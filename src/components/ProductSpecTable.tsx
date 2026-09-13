@@ -2,9 +2,10 @@ import type { ProductSpec } from '../data/earbudsData'
 
 type ProductSpecTableProps = {
   specs: readonly ProductSpec[]
+  note?: string
 }
 
-export function ProductSpecTable({ specs }: ProductSpecTableProps) {
+export function ProductSpecTable({ specs, note }: ProductSpecTableProps) {
   return (
     <section className="bg-black py-16 text-white sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,6 +26,11 @@ export function ProductSpecTable({ specs }: ProductSpecTableProps) {
               </div>
             ))}
           </div>
+          {note ? (
+            <p className="border-t border-orange-500/20 px-5 py-4 text-sm leading-6 text-neutral-400">
+              {note}
+            </p>
+          ) : null}
         </div>
       </div>
     </section>

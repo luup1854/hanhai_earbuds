@@ -67,7 +67,7 @@ export function Earbuds() {
         <ProductFeature key={section.title} section={section} />
       ))}
 
-      <ProductSpecTable specs={earbudsData.specs} />
+      <ProductSpecTable specs={earbudsData.specs} note={earbudsData.specNote} />
 
       <section id="download" className="relative scroll-mt-24 overflow-hidden bg-neutral-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

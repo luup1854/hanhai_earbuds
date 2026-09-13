@@ -150,7 +150,7 @@ export const siteData: SiteData = {
         "我们整合优质品牌、供应链资源与多平台渠道能力，以专业服务和精细化执行，为品牌商与客户搭建高效沟通桥梁，提供稳定可靠的供应链解决方案。",
       image: {
         src: "/images/hero-earbuds.jpg",
-        alt: "宾利伯爵耳机首屏视觉图",
+        alt: "DOSS蓝牙耳机首屏视觉图",
       },
       primaryAction: {
         label: "了解业务",
@@ -263,11 +263,11 @@ export const siteData: SiteData = {
       },
     ],
     earbudsEntry: {
-      name: "宾利伯爵耳机",
+      name: "DOSS蓝牙耳机",
       description: "低延迟 · 清晰通话 · 舒适佩戴 · 稳定连接",
       image: {
         src: "/images/product-banner2.png",
-        alt: "宾利伯爵耳机产品横幅",
+        alt: "DOSS蓝牙耳机产品横幅",
       },
       sellingPoints: ["低延迟", "清晰通话", "舒适佩戴", "稳定连接"],
       action: {
