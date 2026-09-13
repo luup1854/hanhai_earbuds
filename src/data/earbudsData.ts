@@ -111,15 +111,15 @@ export const earbudsData = {
       tags: ["高保真音质", "多频解析", "清晰人声", "沉浸聆听"],
     },
     {
-      eyebrow: "BLUETOOTH V6.0",
-      title: "蓝牙 V6.0，稳定连接强抗干扰",
+      eyebrow: "AI TRANSLATION",
+      title: "AI 实时翻译，跨语言沟通更轻松",
       description:
-        "搭载蓝牙V6.0技术，传输速度更快，抗干扰能力更强复杂场景下也能保持稳定连接。",
+        "支持多场景语音翻译与智能交互，出行、学习、商务沟通都能快速理解与回应。",
       image: {
         src: "/images/earbuds/蓝牙V6.0.webp",
-        alt: "蓝牙 V6.0 稳定连接展示",
+        alt: "AI 实时翻译功能展示",
       },
-      tags: ["快速配对", "低延迟", "长续航", "低功耗"],
+      tags: ["实时翻译", "跨语言沟通", "AI 交互", "语音协同"],
       reverse: true,
     },
   ] satisfies ProductSection[],
@@ -139,7 +139,7 @@ export const earbudsData = {
     { label: "频响范围", value: "20Hz-10kHz" },
     { label: "喇叭曲线灵敏度", value: "113 ±3dB（At 1KHz）" },
   ] satisfies ProductSpec[],
-  specNote: "外观尺寸约 81mm × 30mm × 40mm；以上参数为手工测量，3-5mm 误差属正常现象。",
+  
   appEntry: {
     title: "探索更多精彩，开启智能聆听新体验",
     description: "",
